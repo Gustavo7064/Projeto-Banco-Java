@@ -1,23 +1,14 @@
-  public class conta {
+public class conta {
 
-    int numeroConta;
-    String titular;
-    double saldo;
-    int agencia;
+    private int numeroConta;
+    private String titular;
+    private int agencia;
+    private double saldo;
 
-    public void depositar(double valor){
-        saldo += valor;
-    }
-
-    public void sacar(double valor){
-        if(valor <= saldo){
-            saldo -= valor;
-        } else {
-            System.out.println("Saldo insuficiente");
-        }
-    }
-
-    public void mostrarSaldo(){
-        System.out.println("Saldo atual: " + saldo);
+    public conta(int numeroConta, String titular, int agencia) {
+        this.numeroConta = numeroConta;
+        this.titular = titular;
+        this.agencia = agencia;
+        this.saldo = 0.0;
     }
 }
