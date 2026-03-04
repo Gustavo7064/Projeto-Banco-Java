@@ -1,7 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
 
-        conta conta2 = new conta();
+        Conta conta2 = new Conta();
 
         conta2.titular = "Gustavo";
         conta2.numeroConta = 1234;

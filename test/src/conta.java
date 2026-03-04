@@ -1,11 +1,11 @@
-public class conta {
+public class Conta {
 
     private int numeroConta;
     private String titular;
     private int agencia;
     private double saldo;
 
-    public conta(int numeroConta, String titular, int agencia) {
+    public Conta(int numeroConta, String titular, int agencia) {
         this.numeroConta = numeroConta;
         this.titular = titular;
         this.agencia = agencia;
@@ -28,4 +28,56 @@ public class conta {
         return saldo;
     }
 
+public boolean depositar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Depósito inválido: valor deve ser maior que zero.");
+            return false;
+        }
+        saldo += valor;
+        return true;
+    }
+
+    public boolean sacar(double valor) {
+        if (valor <= 0) {
+            System.out.println("Saque inválido: valor deve ser maior que zero.");
+            return false;
+        }
+
+        if (valor > saldo) {
+            System.out.println("Saldo insuficiente para saque.");
+            return false;
+        }
+
+        saldo -= valor;
+        return true;
+    }
+
+   public boolean transferir(Conta destino, double valor) {
+
+    if (destino == null) {
+        System.out.println("Conta destino inválida.");
+        return false;
+    }
+
+    if (this == destino) {
+        System.out.println("Não é permitido transferir para a mesma conta.");
+        return false;
+    }
+
+    if (valor <= 0) {
+        System.out.println("Transferência inválida: valor deve ser maior que zero.");
+        return false;
+    }
+
+    if (valor > saldo) {
+        System.out.println("Saldo insuficiente para transferência.");
+        return false;
+    }
+
+    // aqui acontece a transferência
+    saldo -= valor;
+    destino.saldo += valor;
+
+    return true;
 }
+

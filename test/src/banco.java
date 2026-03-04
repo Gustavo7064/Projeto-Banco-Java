@@ -1,4 +1,4 @@
-public class banco {
+public class Banco {
 
     String nomeBanco;
     int codigoBanco;
