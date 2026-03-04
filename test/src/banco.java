@@ -4,12 +4,4 @@ public class banco {
     int codigoBanco;
     String endereco;
     
-
-    public class Conta {
-
-    int numeroConta;
-    String titular;
-    double saldo;
-    int agencia;
-}
 }
