@@ -77,7 +77,9 @@ public boolean depositar(double valor) {
     // aqui acontece a transferência
     saldo -= valor;
     destino.saldo += valor;
+
     return true;
+    }
 
     public void imprimirExtrato() {
         System.out.println("---- EXTRATO ----");
