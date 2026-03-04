@@ -77,7 +77,15 @@ public boolean depositar(double valor) {
     // aqui acontece a transferência
     saldo -= valor;
     destino.saldo += valor;
-
     return true;
-}
 
+    public void imprimirExtrato() {
+        System.out.println("---- EXTRATO ----");
+        System.out.println("Titular: " + titular);
+        System.out.println("Agência: " + agencia);
+        System.out.println("Conta: " + numeroConta);
+        System.out.printf("Saldo: R$ %.2f%n", saldo);
+        System.out.println("-----------------");
+    
+}
+}
