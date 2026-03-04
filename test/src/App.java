@@ -1,16 +1,28 @@
 public class App {
-    public static void main(String[] args) throws Exception {
 
-        Conta conta2 = new Conta();
+    public static void main(String[] args) {
 
-        conta2.titular = "Gustavo";
-        conta2.numeroConta = 1234;
-        conta2.agencia = 10;
-        conta2.saldo = 1000;
+        // 1) Criando o banco
+        Banco banco = new Banco("Banco do Gustavo", 123, "Av. Central, 100");
 
-        conta2.depositar(500);
-        conta2.sacar(200);
+        // 2) Criando contas
+        Conta conta1 = new Conta(1001, "Gustavo", 10);
+        Conta conta2 = new Conta(1002, "Maria", 10);
 
-        conta2.mostrarSaldo();
+        // 3) Adicionando as contas ao banco
+        banco.adicionarConta(conta1);
+        banco.adicionarConta(conta2);
+
+        // 4) Operações
+        conta1.depositar(1000);
+        conta1.sacar(200);
+        conta1.transferir(conta2, 300);
+
+        // 5) Extratos
+        conta1.imprimirExtrato();
+        conta2.imprimirExtrato();
+
+        // 6) Listar contas cadastradas no banco
+        banco.listarContas();
     }
 }

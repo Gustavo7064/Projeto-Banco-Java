@@ -88,6 +88,5 @@ public boolean depositar(double valor) {
         System.out.println("Conta: " + numeroConta);
         System.out.printf("Saldo: R$ %.2f%n", saldo);
         System.out.println("-----------------");
-    
-}
+    }
 }
